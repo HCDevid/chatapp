@@ -1,5 +1,6 @@
 Template.messages.helpers({
-	messages: Messages.find();
+	messages: Messages.find({})
+	// Can't use semi-colon here because it messages with messages being identified as a function
 })
 
 Template.footer.events({
