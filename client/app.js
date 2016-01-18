@@ -1,3 +1,7 @@
+Accounts.ui.config({
+	passwordSignupFields: "USERNAME_AND_EMAIL"
+});
+
 Template.messages.helpers({
 	messages: Messages.find({})
 	// Can't use semi-colon here because it messages with messages being identified as a function
