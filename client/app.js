@@ -29,14 +29,6 @@ Template.registerHelper("timestampToTime", function (timestamp) {
 	return hours + ':' + minutes.substr(minutes.length-2) + ':' + seconds.substr(seconds.length-2);
 });
 
-// Template.messages.onCreated(function () {
-// 	var self = this;
-// 	self.autorun(function () {
-// 		self.subscribe('messages', {channel: Session.get('channel')});
-// 		// self.subscribe('messages', Session.get('channel'));
-// 	});
-// });
-
 Template.messages.onCreated(function() {
 	var self = this;
 	self.autorun(function() {
