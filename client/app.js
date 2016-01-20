@@ -2,6 +2,9 @@ Accounts.ui.config({
 	passwordSignupFields: "USERNAME_AND_EMAIL"
 });
 
+Meteor.subscribe("messages");
+Meteor.subscribe("allUsernames");
+
 Template.registerHelper("usernameFromId", function (userId) {
 	var user = Meteor.users.findOne({_id: userId});
 	if (typeof user == 'undefined') {
