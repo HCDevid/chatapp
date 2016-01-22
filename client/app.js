@@ -6,9 +6,10 @@ Accounts.ui.config({
 Meteor.subscribe("allUsernames");
 Meteor.subscribe("channels");
 
-Meteor.startup(function() {
-	Session.set('channel', 'general');
-});
+// Meteor startup channel set no longer necessary after configuring router
+// Meteor.startup(function() {
+// 	Session.set('channel', 'general');
+// });
 
 Template.registerHelper("usernameFromId", function (userId) {
 	var user = Meteor.users.findOne({_id: userId});
@@ -48,11 +49,12 @@ Template.listings.helpers({
 });
 
 
-Template.channel.events({
-	'click .channel': function (e) {
-		Session.set('channel', this.name);
-	}
-});
+// No longer necessary after configuring iron:router to use :channel in routing
+// Template.channel.events({
+// 	'click .channel': function (e) {
+// 		Session.set('channel', this.name);
+// 	}
+// });
 
 Template.channel.helpers({
 	active: function () {
