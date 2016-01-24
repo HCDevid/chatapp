@@ -14,7 +14,7 @@ Meteor.subscribe("channels");
 Template.registerHelper("usernameFromId", function (userId) {
 	var user = Meteor.users.findOne({_id: userId});
 	if (typeof user == 'undefined') {
-		return 'Anonymous';
+		return 'Anon';
 	}
 	if (typeof user.services.github !== 'undefined') {
 		return user.services.github.username;
