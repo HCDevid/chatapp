@@ -7,6 +7,12 @@ Meteor.startup(function () {
 		name: 'random'
 	});
 
+	if (Meteor.users.find().count() == 0) {
+		Meteor.users.insert({
+			name: 'Khan'
+		});
+	}
+
 
 
 	Factory.define('message', Messages, {
